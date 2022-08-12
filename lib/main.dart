@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_overlay_window/flutter_overlay_window.dart';
-import 'package:pluginexample/ButtonPlugIn.dart';
-import 'package:pluginexample/OverLayWindow.dart';
 import 'package:pluginexample/onBordingScreen.dart';
+import 'package:upgrader/upgrader.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Upgrader.clearSavedSettings();
   runApp(const MyApp());
 }
 
@@ -13,7 +13,8 @@ void main() {
 @pragma("vm:entry-point")
 void overlayMain() {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(MaterialApp(
+  runApp(
+      MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Material(
           shape: RoundedRectangleBorder(
@@ -46,7 +47,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      home: LiquidSwipeExample(),
+      home: UpgradeAlert(
+          child: LiquidSwipeExample()),
     );
   }
 }

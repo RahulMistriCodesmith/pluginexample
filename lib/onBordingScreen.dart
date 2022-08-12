@@ -3,8 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
 import 'package:flutter/src/material/icons.dart';
+import 'package:new_version/new_version.dart';
 import 'package:pluginexample/ButtonPlugIn.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class LiquidSwipeExample extends StatefulWidget {
   const LiquidSwipeExample({Key? key}) : super(key: key);
@@ -17,6 +17,35 @@ class _LiquidSwipeExampleState extends State<LiquidSwipeExample> {
 
   final pageController = LiquidController();
   bool isLastPage = false;
+
+
+  //NewVersion Plugin
+  void _checkVersion() async {
+    final newVersion = NewVersion(
+      androidId: "com.snapchat.android",
+    );
+    final VersionStatus? status = await newVersion.getVersionStatus();
+    newVersion.showUpdateDialog(
+        context: context,
+        versionStatus: status!,
+        dialogTitle: 'UPDATE VERSION',
+        dismissButtonText: 'Maybe Later',
+        dialogText: 'Please Update Your Application' + " ${status.localVersion}" + " to" " ${status.storeVersion}",
+        dismissAction: (){
+          Navigator.pop(context);
+        }
+    );
+
+    print('DEVICE : ' + status.localVersion);
+    print('STORE : ' + status.storeVersion);
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _checkVersion();
+  }
 
   @override
   Widget build(BuildContext context) {

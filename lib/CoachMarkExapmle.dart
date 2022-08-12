@@ -69,6 +69,7 @@ class _TutorailCoachMarkExampleState extends State<TutorailCoachMarkExample> {
       bottomNavigationBar: Stack(
         children: [
           Container(
+
             height: 50,
             child: Row(
               children: [
@@ -131,10 +132,10 @@ class _TutorailCoachMarkExampleState extends State<TutorailCoachMarkExample> {
   void createTutorial() {
     tutorialCoachMark = TutorialCoachMark(
       targets: _createTargets(),
-      colorShadow: Colors.red,
+      colorShadow: Colors.transparent,
       textSkip: "SKIP",
       paddingFocus: 10,
-      opacityShadow: 0.8,
+      opacityShadow: 0.1,
       onFinish: () {
         print("finish");
       },
@@ -162,19 +163,28 @@ class _TutorailCoachMarkExampleState extends State<TutorailCoachMarkExample> {
         identify: "keyBottomNavigation1",
         keyTarget: keyBottomNavigation1,
         alignSkip: Alignment.topRight,
+        shape: ShapeLightFocus.RRect,
         contents: [
           TargetContent(
             align: ContentAlign.top,
             builder: (context, controller) {
               return Container(
+                padding: EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+                margin: EdgeInsets.symmetric(horizontal: 35),
+                // width: 100,
+                // height: 60,
+                decoration: BoxDecoration(
+                    color: Colors.amberAccent,
+                    borderRadius: BorderRadius.circular(10)
+                ),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Text(
                       "Home",
                       style: TextStyle(
-                        color: Colors.white,
+                        color: Colors.black,
                       ),
                     ),
                   ],
@@ -191,11 +201,20 @@ class _TutorailCoachMarkExampleState extends State<TutorailCoachMarkExample> {
         identify: "keyBottomNavigation2",
         keyTarget: keyBottomNavigation2,
         alignSkip: Alignment.topCenter,
+        shape: ShapeLightFocus.RRect,
         contents: [
           TargetContent(
             align: ContentAlign.top,
             builder: (context, controller) {
               return Container(
+                padding: EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+                margin: EdgeInsets.symmetric(horizontal: 35),
+                // width: 100,
+                // height: 60,
+                decoration: BoxDecoration(
+                    color: Colors.amberAccent,
+                    borderRadius: BorderRadius.circular(10)
+                ),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -203,7 +222,7 @@ class _TutorailCoachMarkExampleState extends State<TutorailCoachMarkExample> {
                     Text(
                       "Business",
                       style: TextStyle(
-                        color: Colors.white,
+                        color: Colors.black,
                       ),
                     ),
                   ],
@@ -220,11 +239,20 @@ class _TutorailCoachMarkExampleState extends State<TutorailCoachMarkExample> {
         identify: "keyBottomNavigation3",
         keyTarget: keyBottomNavigation3,
         alignSkip: Alignment.topRight,
+        shape: ShapeLightFocus.RRect,
         contents: [
           TargetContent(
             align: ContentAlign.top,
             builder: (context, controller) {
               return Container(
+                padding: EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+                margin: EdgeInsets.symmetric(horizontal: 35),
+                // width: 100,
+                // height: 60,
+                decoration: BoxDecoration(
+                    color: Colors.amberAccent,
+                    borderRadius: BorderRadius.circular(10)
+                ),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -232,7 +260,7 @@ class _TutorailCoachMarkExampleState extends State<TutorailCoachMarkExample> {
                     Text(
                       "School",
                       style: TextStyle(
-                        color: Colors.white,
+                        color: Colors.black,
                       ),
                     ),
                   ],
@@ -247,11 +275,20 @@ class _TutorailCoachMarkExampleState extends State<TutorailCoachMarkExample> {
       TargetFocus(
         identify: "Target 0",
         keyTarget: key,
+        shape: ShapeLightFocus.Circle,
         contents: [
           TargetContent(
             align: ContentAlign.bottom,
             builder: (context, controller) {
               return Container(
+                padding: EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+                margin: EdgeInsets.symmetric(horizontal: 35),
+                // width: 100,
+                // height: 60,
+                decoration: BoxDecoration(
+                    color: Colors.amberAccent,
+                    borderRadius: BorderRadius.circular(10)
+                ),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -260,7 +297,7 @@ class _TutorailCoachMarkExampleState extends State<TutorailCoachMarkExample> {
                       "Profile Image",
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          color: Colors.white,
+                          color: Colors.black,
                           fontSize: 20.0),
                     ),
 
@@ -276,12 +313,21 @@ class _TutorailCoachMarkExampleState extends State<TutorailCoachMarkExample> {
       TargetFocus(
         identify: "Target 1",
         keyTarget: key1,
-        color: Colors.purple,
+        shape: ShapeLightFocus.RRect,
+        // color: Colors.purple,
         contents: [
           TargetContent(
             align: ContentAlign.bottom,
             builder: (context, controller) {
               return Container(
+                padding: EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+                margin: EdgeInsets.symmetric(horizontal: 35),
+                // width: 100,
+                // height: 60,
+                decoration: BoxDecoration(
+                  color: Colors.amberAccent,
+                  borderRadius: BorderRadius.circular(10)
+                ),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -290,7 +336,7 @@ class _TutorailCoachMarkExampleState extends State<TutorailCoachMarkExample> {
                       "Ex",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        color: Colors.white,
+                        color: Colors.black,
                         fontSize: 20.0,
                       ),
                     ),
@@ -308,7 +354,6 @@ class _TutorailCoachMarkExampleState extends State<TutorailCoachMarkExample> {
             },
           )
         ],
-        shape: ShapeLightFocus.RRect,
         radius: 5,
       ),
     );
@@ -316,10 +361,19 @@ class _TutorailCoachMarkExampleState extends State<TutorailCoachMarkExample> {
       TargetFocus(
         identify: "Target 2",
         keyTarget: key2,
+        shape: ShapeLightFocus.RRect,
         contents: [
           TargetContent(
             align: ContentAlign.bottom,
             child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+              margin: EdgeInsets.symmetric(horizontal: 35),
+              // width: 100,
+              // height: 60,
+              decoration: BoxDecoration(
+                  color: Colors.amberAccent,
+                  borderRadius: BorderRadius.circular(10)
+              ),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -344,7 +398,6 @@ class _TutorailCoachMarkExampleState extends State<TutorailCoachMarkExample> {
           ),
 
         ],
-        shape: ShapeLightFocus.RRect,
       ),
     );
     return targets;
