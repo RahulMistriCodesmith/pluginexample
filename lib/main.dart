@@ -1,4 +1,6 @@
+import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_overlay_window/flutter_overlay_window.dart';
 import 'package:pluginexample/onBordingScreen.dart';
 import 'package:upgrader/upgrader.dart';
@@ -6,6 +8,38 @@ import 'package:upgrader/upgrader.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Upgrader.clearSavedSettings();
+  SystemChrome.setPreferredOrientations(
+      [
+        DeviceOrientation.portraitUp,
+        DeviceOrientation.portraitDown
+      ]
+  );
+
+  // WidgetsFlutterBinding.ensureInitialized();
+
+  AwesomeNotifications().initialize(
+      null, // icon for your app notification
+      [
+        NotificationChannel(
+            channelKey: 'key1',
+            channelName: 'Proto Coders Point',
+            channelDescription: "Notification example",
+            defaultColor: Color(0XFF9050DD),
+            ledColor: Colors.white,
+            playSound: true,
+            enableLights:true,
+            enableVibration: true
+        )
+      ]
+  );
+
+  SystemChrome.setPreferredOrientations(
+      [
+        DeviceOrientation.portraitUp,
+        DeviceOrientation.portraitDown
+      ]
+  );
+
   runApp(const MyApp());
 }
 
